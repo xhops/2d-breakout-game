@@ -177,3 +177,14 @@ document.addEventListener("keyup", keyUpHandler, false);
 
 // every 10 miliseconds draw on canvas
 setInterval(draw, 10);
+
+// mouse controls
+document.addEventListener("mousemove", mouseMoveHandler, false);
+
+// function for mouse movement
+function mouseMoveHandler(e){
+	var relativeX = e.clientX - canvas.offsetLeft;
+	if(relativeX > 0 && relativeX < canvas.width){
+		paddleX = relativeX - paddleWidth/2;
+	}
+}
